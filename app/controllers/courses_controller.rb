@@ -3,24 +3,29 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
+    @title = 'Courses'
     @courses = Course.all
   end
 
   # GET /courses/1 or /courses/1.json
   def show
+    @title = Course.title
   end
 
   # GET /courses/new
   def new
+    @title = 'New Course'
     @course = Course.new
   end
 
   # GET /courses/1/edit
   def edit
+    @title = 'Edit course'
   end
 
   # POST /courses or /courses.json
   def create
+    @title = 'New Course'
     @course = Course.new(course_params)
 
     respond_to do |format|
@@ -36,6 +41,7 @@ class CoursesController < ApplicationController
 
   # PATCH/PUT /courses/1 or /courses/1.json
   def update
+    @title = 'Edit course'
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to course_url(@course), notice: "Course was successfully updated." }
@@ -66,5 +72,12 @@ class CoursesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def course_params
       params.require(:course).permit(:image, :description, :title, :embedcode, :released)
+    end
+
+    def upload
+      uploaded_file = params[:picture]
+      File.open(Rails.root.join('public', 'images', uploaded_file.original_filename), 'wb') do |file|
+        file.write(uploaded_file.read)
+      end
     end
 end
