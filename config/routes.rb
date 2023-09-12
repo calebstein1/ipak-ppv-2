@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
-  get 'static_pages/newsletter'
-  get 'static_pages/support'
-  get 'static_pages/about'
-  get 'static_pages/tos'
+  resources :courses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/index', to: 'static_pages#home'
+  get '/newsletter', to: 'static_pages#newsletter'
+  get '/support', to: 'static_pages#support'
+  get '/about', to: 'static_pages#about'
+  get '/tos', to: 'static_pages#tos'
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "static_pages#home"
 end
