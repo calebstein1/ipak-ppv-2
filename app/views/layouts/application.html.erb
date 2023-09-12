@@ -20,8 +20,8 @@
       <h1 id="newest-recipes" class="header-logo"><%= link_to @title, "/" %></h1>
     </div>
     <div class="content-area">
-      <%= render 'public/sidebar' %>
       <input type="checkbox" id="menu-toggle" name="menu-toggle">
+      <%= render 'public/sidebar' %>
       <%= yield %>
     </div>
   </body>
