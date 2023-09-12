@@ -2,10 +2,13 @@
 
 <div id="courses">
   <% @courses.each do |course| %>
-    <%= render course %>
-    <p>
-      <%= link_to "Show this course", course %>
-    </p>
+    <div>
+      <%= link_to(
+        tag.div(
+          image_tag(course.image, class: "course-image" ),
+        class: "image-container" ),
+      course ) %>
+    </div>
   <% end %>
 </div>
 
