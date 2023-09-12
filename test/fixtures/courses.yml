@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  description: MyText
+  title: MyString
+  embedcode: MyString
+  released: false
+
+two:
+  image: MyString
+  description: MyText
+  title: MyString
+  embedcode: MyString
+  released: false
