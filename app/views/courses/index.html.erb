@@ -1,12 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<div id="courses">
+<div class="course-cards">
   <% @courses.each do |course| %>
     <div>
       <%= link_to(
-        tag.div(
+        raw("#{tag.div(
           image_tag(course.image, class: "course-image" ),
-        class: "image-container" ),
+        class: "image-container" )}
+        #{tag.span(course.description, class: "course-desc")}
+        #{tag.p(course.title)}"),
       course ) %>
     </div>
   <% end %>

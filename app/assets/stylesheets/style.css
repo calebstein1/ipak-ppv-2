@@ -116,7 +116,7 @@ ul {
     grid-auto-rows: 193.667px;
     display: grid;
 }
-.course-cards button {
+.course-cards a {
     background-color: var(--nord10);
     overflow: hidden;
     padding: 8px;
@@ -127,7 +127,7 @@ ul {
     flex-direction: column;
     display: flex;
 }
-.course-cards button:hover {
+.course-cards a:hover {
     padding: 16px;
 }
 .image-container {
@@ -169,10 +169,10 @@ ul {
 .course-desc::-webkit-scrollbar {
     display: none;
 }
-.course-cards button:hover > .image-container {
+.course-cards a:hover > .image-container {
     display: none;
 }
-.course-cards button:hover > .course-desc {
+.course-cards a:hover > .course-desc {
     display: block;
 }
 .video-container, .text-container {
