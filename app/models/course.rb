@@ -5,4 +5,6 @@ class Course < ApplicationRecord
   validates :embedcode, presence: :true
 
   has_one_attached :image
+
+  default_scope { order(id: :desc) }
 end
