@@ -9,7 +9,7 @@
         class: "image-container" )}
         #{tag.span(course.description, class: "course-desc")}
         #{tag.p(course.title)}"),
-      course ) %>
+      course, data: { turbo: "false" }) %>
     </div>
   <% end %>
 </div>
