@@ -73,11 +73,4 @@ class CoursesController < ApplicationController
     def course_params
       params.require(:course).permit(:image, :description, :title, :embedcode, :released)
     end
-
-    def upload
-      uploaded_file = params[:picture]
-      File.open(Rails.root.join('public', 'images', uploaded_file.original_filename), 'wb') do |file|
-        file.write(uploaded_file.read)
-      end
-    end
 end
