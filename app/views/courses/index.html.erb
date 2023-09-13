@@ -1,14 +1,16 @@
 <div class="course-cards" id="artlist">
   <% @courses.each do |course| %>
-    <div>
-      <%= link_to(
-        raw("#{tag.div(
-          image_tag(course.image, class: "course-image" ),
-        class: "image-container" )}
-        #{tag.span(course.description, class: "course-desc")}
-        #{tag.p(course.title)}"),
-      course, data: { turbo: "false" }) %>
-    </div>
+    <% if course.released %>
+      <div>
+        <%= link_to(
+          raw("#{tag.div(
+            image_tag(course.image, class: "course-image" ),
+          class: "image-container" )}
+          #{tag.span(course.description, class: "course-desc")}
+          #{tag.p(course.title)}"),
+        course, data: { turbo: "false" }) %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
