@@ -22,6 +22,24 @@ ul {
 .inactive {
     display: none;
 }
+.notice {
+    background-color: var(--nord14);
+    color: var(--nord3);
+}
+.alert {
+    background-color: var(--nord11);
+    color: var(--nord4);
+}
+.notice, .alert {
+    font-size: 32px;
+    opacity: .85;
+    padding: 4px 100% 8px 100%;
+    left: 50%;
+    transform: translate(-50%);
+    justify-content: center;
+    display: none;
+    position: fixed;
+}
 .header {
     background-color: var(--nord0);
     height: 72px;

@@ -49,6 +49,8 @@
   </head>
 
   <body>
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
     <div class="header">
       <label for="menu-toggle">
         <%= image_tag "burger.png", class: "mobile-nav" %>
@@ -64,5 +66,20 @@
       <%= render 'public/sidebar' %>
       <%= yield %>
     </div>
+    <script>
+      const timeout = setTimeout(clearMsg, 5000);
+
+      if (document.querySelector(".notice").textContent) {
+          document.querySelector(".notice").style.display = "flex";
+      }
+      if (document.querySelector(".alert").textContent) {
+          document.querySelector(".alert").style.display = "flex";
+      }
+
+      function clearMsg() {
+          document.querySelector(".notice").style.display = "none";
+          document.querySelector(".alert").style.display = "none";
+      }
+    </script>
   </body>
 </html>
