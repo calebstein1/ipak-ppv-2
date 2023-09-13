@@ -32,14 +32,20 @@ ul {
 }
 .flash {
     font-size: 32px;
-    opacity: .85;
-    padding: 4px 100% 8px 100%;
+    opacity: .9;
+    padding: 16px;
+    border-radius: 8px;
+    top: 32px;
     left: 50%;
     transform: translate(-50%);
-    width: 100%;
+    width: clamp(150px, 60vw, 800px);
     justify-content: center;
     display: none;
     position: fixed;
+    transition: opacity 0.2s ease-in;
+}
+.flash:hover {
+    opacity: 1;
 }
 .header {
     background-color: var(--nord0);

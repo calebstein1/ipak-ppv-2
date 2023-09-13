@@ -67,19 +67,16 @@
       <%= yield %>
     </div>
     <script>
-      setTimeout(clearMsg, 4000);
+      setTimeout(clearMsg, 10000);
 
       if (document.querySelector(".notice").textContent) {
           document.querySelector(".notice").style.display = "flex";
+          document.querySelector(".notice").addEventListener("click", clearMsg);
       }
       if (document.querySelector(".alert").textContent) {
           document.querySelector(".alert").style.display = "flex";
+          document.querySelector(".alert").addEventListener("click", clearMsg);
       }
-
-      document.querySelectorAll(".flash").forEach(flash => flash.onchange = (flash) => {
-          flash.style.display = "flex";
-          setTimeout(clearMsg, 4000);
-      } );
 
       function clearMsg() {
           document.querySelector(".notice").style.display = "none";
