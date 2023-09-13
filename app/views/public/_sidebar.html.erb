@@ -1,6 +1,15 @@
 <div class="sidebar">
   <ul>
-    <li class="sidebar-link"><%= link_to "Courses", "/courses", data: { turbo: "false" } %></li>
+    <li class="sidebar-link">
+      <%= link_to "https://ipak-edu.org/registration", target: "_blank" do %>
+        Live<br>Courses
+      <% end %>
+    </li>
+    <li class="sidebar-link">
+      <%= link_to "/courses", data: { turbo: "false" } do %>
+        On-Demand<br>Courses
+      <% end %>
+    </li>
     <li class="sidebar-link"><%= link_to "Newsletter", "/newsletter" %></li>
     <li class="sidebar-link"><%= link_to "Support", "/support" %></li>
     <li class="sidebar-link"><%= link_to "About", "/about" %></li>
