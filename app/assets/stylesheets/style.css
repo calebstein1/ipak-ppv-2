@@ -30,12 +30,13 @@ ul {
     background-color: var(--nord11);
     color: var(--nord4);
 }
-.notice, .alert {
+.flash {
     font-size: 32px;
     opacity: .85;
     padding: 4px 100% 8px 100%;
     left: 50%;
     transform: translate(-50%);
+    width: 100%;
     justify-content: center;
     display: none;
     position: fixed;

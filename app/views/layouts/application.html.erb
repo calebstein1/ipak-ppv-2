@@ -49,8 +49,8 @@
   </head>
 
   <body>
-    <div class="notice"><%= notice %></div>
-    <div class="alert"><%= alert %></div>
+    <div class="notice flash"><%= notice %></div>
+    <div class="alert flash"><%= alert %></div>
     <div class="header">
       <label for="menu-toggle">
         <%= image_tag "burger.png", class: "mobile-nav" %>
@@ -67,7 +67,7 @@
       <%= yield %>
     </div>
     <script>
-      const timeout = setTimeout(clearMsg, 5000);
+      setTimeout(clearMsg, 4000);
 
       if (document.querySelector(".notice").textContent) {
           document.querySelector(".notice").style.display = "flex";
@@ -75,6 +75,11 @@
       if (document.querySelector(".alert").textContent) {
           document.querySelector(".alert").style.display = "flex";
       }
+
+      document.querySelectorAll(".flash").forEach(flash => flash.onchange = (flash) => {
+          flash.style.display = "flex";
+          setTimeout(clearMsg, 4000);
+      } );
 
       function clearMsg() {
           document.querySelector(".notice").style.display = "none";
