@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   resources :courses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get '/index', to: 'static_pages#home'

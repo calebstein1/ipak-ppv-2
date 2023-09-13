@@ -1,5 +1,18 @@
 <div class="course-cards" id="artlist">
   <% @courses.each do |course| %>
+    <% if user_signed_in? %>
+      <% unless course.released %>
+        <div>
+          <%= link_to course, style: "background-color: var(--nord3)", data: { turbo: "false" } do %>
+            <%= tag.div class: "image-container" do %>
+              <%= image_tag course.image, class: "course-image" %>
+            <% end %>
+            <%= tag.span course.description, class: "course-desc" %>
+            <%= tag.p course.title %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
     <% if course.released %>
       <div>
         <%= link_to course, data: { turbo: "false" } do %>

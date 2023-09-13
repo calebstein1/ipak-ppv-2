@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     display: flex;
 }
-a, button {
+a {
     color: var(--nord4);
     text-decoration: none;
 }
