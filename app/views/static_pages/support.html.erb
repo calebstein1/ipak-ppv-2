@@ -1,11 +1,10 @@
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             emailjs.init('V4JqfTzqfz6-Dlc_U');
         })();
     </script>
     <script type="text/javascript">
-        window.onload = function() {
+        window.addEventListener("turbo:load", () => {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 document.getElementById("sending-text").innerHTML = '<div class="loader"></div>Sending...';
@@ -22,7 +21,7 @@
                         document.getElementById("sending-text").textContent = "Sending failed for some reason, please send your request directly to helpdesk@ipak-edu.org";
                     });
             });
-        }
+        } );
     </script>
     <style>
         #sending-text {
@@ -57,5 +56,5 @@
     <input type="submit" value="Send">
   </form>
   <div id="sending-text"></div>
-  <p>The source code for this site is hosted <a target="_blank" href="https://github.com/calebstein1/ipak-ppv-2">on GitHub</a>, and you're more than welcome to open an issue or feature request there as well.</
+  <p>The source code for this site is hosted <a target="_blank" href="https://github.com/calebstein1/ipak-ppv-2">on GitHub</a>, and you're more than welcome to open an issue or feature request there as well.</p>
 </div>

@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
       <% unless course.released %>
         <div>
-          <%= link_to course, style: "background-color: var(--nord3)", data: { turbo: "false" } do %>
+          <%= link_to course, style: "background-color: var(--nord3)" do %>
             <%= tag.div class: "image-container" do %>
               <%= image_tag course.image, class: "course-image" %>
             <% end %>
