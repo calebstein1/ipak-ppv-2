@@ -15,7 +15,7 @@
     <% end %>
     <% if course.released %>
       <div>
-        <%= link_to course, data: { turbo: "false" } do %>
+        <%= link_to course do %>
           <%= tag.div class: "image-container" do %>
             <%= image_tag course.image, class: "course-image" %>
           <% end %>
