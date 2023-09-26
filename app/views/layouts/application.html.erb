@@ -50,23 +50,15 @@
     <% end %>
   </head>
 
-  <body>
-    <div class="notice flash"><%= notice %></div>
-    <div class="alert flash"><%= alert %></div>
-    <div class="header">
-      <label for="menu-toggle">
-        <%= image_tag "burger.png", class: "mobile-nav" %>
-      </label>
-      <a href="/"><%= image_tag "home.png", class: "home-nav" %></a>
-      <h1 id="newest-recipes" class="header-logo"><%= link_to @title, "/" %></h1>
-      <% if current_page?(courses_url) %>
-        <input placeholder="Search courses..." id="search" class="search-box">
-      <% end %>
+  <body style="padding-top:72px;">
+    <div class="container text-center">
+      <%= render 'public/navbar' %>
+      <h1><%= @title %></h1>
     </div>
-    <div class="content-area">
-      <input type="checkbox" id="menu-toggle" name="menu-toggle">
-      <%= render 'public/sidebar' %>
-      <%= yield %>
+    <div class="container border text-center">
+      <div class="row justify-content-center">
+        <%= yield %>
+      </div>
     </div>
     <script>
       setTimeout(clearMsg, 10000);
@@ -85,5 +77,6 @@
           document.querySelector(".alert").style.display = "none";
       }
     </script>
+    </div>
   </body>
 </html>
