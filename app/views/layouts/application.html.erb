@@ -50,7 +50,7 @@
     <% end %>
   </head>
 
-  <body style="padding-top:72px;">
+  <body class="d-flex flex-column" style="padding-top:72px;min-height:100svh">
     <div class="container text-center">
       <%= render 'public/navbar' %>
       <h1><%= @title %></h1>
@@ -60,23 +60,9 @@
         <%= yield %>
       </div>
     </div>
-    <script>
-      setTimeout(clearMsg, 10000);
-
-      if (document.querySelector(".notice").textContent) {
-          document.querySelector(".notice").style.display = "flex";
-          document.querySelector(".notice").addEventListener("click", clearMsg);
-      }
-      if (document.querySelector(".alert").textContent) {
-          document.querySelector(".alert").style.display = "flex";
-          document.querySelector(".alert").addEventListener("click", clearMsg);
-      }
-
-      function clearMsg() {
-          document.querySelector(".notice").style.display = "none";
-          document.querySelector(".alert").style.display = "none";
-      }
-    </script>
+    <div class="wrapper flex-grow-1"></div>
+    <div class="container">
+      <%= render 'public/footer' %>
     </div>
   </body>
 </html>
