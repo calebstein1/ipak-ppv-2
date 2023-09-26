@@ -13,4 +13,15 @@
  *= require_self
  */
 
+$theme-colors: (
+  "primary": #5E81AC,
+  "secondary": #81A1C1,
+  "success": #A3BE8C,
+  "warning": #EBCB8B,
+  "danger": #BF616a,
+  "light": #ECEFF4,
+  "dark": #2E3440
+);
+
 @import "bootstrap";
+@import "cards.css";

@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg bg-primary border-bottom border-body fixed-top" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top text-center" data-bs-theme="dark">
   <div class="container">
-    <%= link_to "IPAK EDU Streaming", "/", id: "newest-recipes", class: "navbar-brand" %>
+    <%= link_to "IPAK EDU Streaming", "/", class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-start">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0 text-start">
         <li class="nav-item">
           <%= link_to "https://ipak-edu.org/registration", target: "_blank", class: "nav-link active" do %>
             Live Courses
@@ -16,7 +16,6 @@
             On-Demand Courses
           <% end %>
         </li>
-        <li class="nav-item"><%= link_to "Newsletter", "/newsletter", class: "nav-link active" %></li>
         <li class="nav-item"><%= link_to "Support", "/support", class: "nav-link active" %></li>
         <li class="nav-item"><%= link_to "About", "/about", class: "nav-link active" %></li>
         <% if user_signed_in? %>
@@ -32,11 +31,6 @@
               Admin Log In
             <% end %>
           </li>
-        <% end %>
-        <% if current_page?(courses_url) %>
-          <form class="d-flex" role="search">
-            <input placeholder="Search courses..." id="search" class="form-control" aria-label="Search">
-          </form>
         <% end %>
       </ul>
     </div>
