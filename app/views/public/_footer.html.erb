@@ -1,4 +1,42 @@
-<div class="d-flex justify-content-between pt-3">
-  <%= link_to "Terms of Use", "/tos" %>
+<div class="d-flex justify-content-between align-items-start pt-3">
+  <button type="button" class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#tos">
+    Terms of Use
+  </button>
   <p>Site design by <%= link_to "Caleb Stein", "https://calebstein.net", target: "_blank" %></p>
 </div>
+<div class="modal fade" id="tos" tabindex="-1" aria-labelledby="tosLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="tosLabel">Terms of Use</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="d-flex flex-column gap-2 list-unstyled">
+          <li>
+            Each purchase of a full course or single lecture grants you a non-exclusive license to view the purchased course or lecture for your own personal, non-commercial use using the player software embedded on this site.
+          </li>
+          <li>
+            You may use each purchased license to view the content on up to four unique devices at a time.
+          </li>
+          <li>
+            No purchase of any license on this site grants you any rights to the trademarks used on this site or any content hosted on this site. All trademark rights are held by IPAK EDU or the instructors/lecturers who have created the content displayed or hosted on this site.
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="tosDismiss">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("turbo:load", () => {
+    const myModal = document.getElementById('tos');
+    const myInput = document.getElementById('tosDismiss');
+
+    myModal.addEventListener('shown.bs.modal', () => {
+      myInput.focus();
+    });
+  });
+</script>
