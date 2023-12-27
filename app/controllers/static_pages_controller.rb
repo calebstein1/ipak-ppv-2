@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @title = 'IPAK EDU On-Demand Streaming'
+    @title = 'IPAK EDU Self-Paced Streaming'
   end
 
   def newsletter

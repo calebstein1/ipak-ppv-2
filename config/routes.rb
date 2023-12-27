@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get '/tos', to: 'static_pages#tos'
 
   # Defines the root path route ("/")
-  root "static_pages#home"
+  root "courses#index"
 end

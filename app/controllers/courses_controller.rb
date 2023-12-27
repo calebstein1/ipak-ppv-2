@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @title = 'Courses'
+    @title = 'Self-Paced Courses'
     @courses = Course.all
   end
 
