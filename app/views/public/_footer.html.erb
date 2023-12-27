@@ -4,7 +4,7 @@
   </button>
   <p>Site design by <%= link_to "Caleb Stein", "https://calebstein.net", target: "_blank" %></p>
 </div>
-<div class="modal fade" id="tos" tabindex="-1" aria-labelledby="tosLabel" aria-hidden="true">
+<div class="modal fade" id="tos" tabindex="-1" aria-labelledby="tosLabel" aria-hidden="true" data-turbo-temporary>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -24,7 +24,8 @@
           </li>
         </ul>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer justify-content-between">
+        <%= link_to "View on Separate Page", "/tos" %>
         <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="tosDismiss">Close</button>
       </div>
     </div>
@@ -38,5 +39,9 @@
     myModal.addEventListener('shown.bs.modal', () => {
       myInput.focus();
     });
+  });
+
+  window.addEventListener("turbo:before-cache", () => {
+      document.querySelectorAll(".modal-backdrop").forEach(el => el.classList.remove("modal-backdrop"));
   });
 </script>
